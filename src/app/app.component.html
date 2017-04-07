@@ -1,21 +1,22 @@
+<div id="topbar">
+  <button md-button id="topbarbutton" (click)="showComponent(1)">Dashboard</button>
+  <button md-button id="topbarbutton" (click)="showComponent(2)">Option</button>
+  <button md-button id="topbarbutton" (click)="showComponent(3)">Info</button>
+
+</div>
+
 <md-grid-list cols="5" rows="13" rowHeight="100px">
 
-  <md-grid-tile [colspan]="3" [rowspan]="1">
-    Stroommetingen
+  <md-grid-tile [rowspan]="9" [colspan]="5">
+  <div [ngSwitch]="contentSwitch">
+    <dashboard-page *ngSwitchCase="1">...</dashboard-page>
+    <dog-card *ngSwitchCase="2"></dog-card>
+    <info-page *ngSwitchCase="3"></info-page>
+  </div>
   </md-grid-tile>
 
-  <!--<md-grid-tile [rowspan]="6">-->
-    <!--<dog-card></dog-card>-->
+  <!--<md-grid-tile [rowspan]="6" [colspan]="5">-->
+    <!--<line-chart-demo></line-chart-demo>-->
   <!--</md-grid-tile>-->
-  <!--<md-grid-tile [rowspan]="6">-->
-    <!--<dog-card></dog-card>-->
-  <!--</md-grid-tile>-->
-  <!--<md-grid-tile [rowspan]="6">-->
-    <!--<dog-card></dog-card>-->
-  <!--</md-grid-tile>-->
-
-  <md-grid-tile [rowspan]="5" [colspan]="5">
-    <line-chart-demo></line-chart-demo>
-  </md-grid-tile>
 
 </md-grid-list>
