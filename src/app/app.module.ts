@@ -12,6 +12,7 @@ import { ChartsModule } from 'ng2-charts/ng2-charts';
 import {LineChartDemoComponent} from "./linechartexample/linechartexample.component";
 
 import 'hammerjs';
+import {LineChart24hComponent} from "./linechartexample/linechart24h.component";
 
 
 @NgModule({
@@ -20,7 +21,8 @@ import 'hammerjs';
     DogCard,
     InfoPage,
     DashboardPage,
-    LineChartDemoComponent
+    LineChartDemoComponent,
+    LineChart24hComponent
   ],
   imports: [
     BrowserModule,
