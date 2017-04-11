@@ -1,11 +1,13 @@
 import {LineChartDemoComponent} from "./linechartexample.component";
 import {Component, OnInit} from "@angular/core";
+import {MeetwaardenService} from "../services/MeetwaardenService";
 /**
  * Created by gjoosen on 11/04/2017.
  */
 @Component({
   selector: 'line-chart-24h',
-  templateUrl: '../linechartexample/linechartexample.component.html'
+  templateUrl: '../linechartexample/linechartexample.component.html',
+  providers: [MeetwaardenService]
 })
 
 export class LineChart24hComponent extends LineChartDemoComponent implements OnInit{
@@ -30,12 +32,16 @@ export class LineChart24hComponent extends LineChartDemoComponent implements OnI
     this.setDate();
   }
 
-  public lineChartData:Array<any> = [
+  constructor(private service: MeetwaardenService){
+    super();
+  }
+
+  public lineChartData: Array<any> = [
     {data: [60, 59, 80, 81, 56, 55, 40], label: 'Energy in kWh'}];
 
 
 
-  public lineChartLabels:Array<any> = this.hours;
+  public lineChartLabels: Array<any> = this.hours;
 
   public setDate() {
     this.date2.setHours(this.date.getHours() - 17);
