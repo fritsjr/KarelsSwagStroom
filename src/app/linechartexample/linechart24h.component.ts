@@ -19,8 +19,6 @@ export class LineChart24hComponent extends LineChartDemoComponent implements OnI
   date2 = new Date();
   hours = new Array<Number>();
 
-
-
   ngOnInit() {
     for (let i = 24; i > 0; i--) {
       let hour = this.date.getHours() - i;

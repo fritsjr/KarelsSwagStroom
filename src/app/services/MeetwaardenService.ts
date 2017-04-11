@@ -10,7 +10,7 @@ export class MeetwaardenService {
 
   constructor(private http:Http){}
 
-  private groupsUrl = 'http://localhost:3030/api';
+  private groupsUrl = 'http://52.28.226.118:3030/api';
 
   public getAllMeetwaarden():Observable<any>{
     return this.http.get(this.groupsUrl).map(res => res.json()).catch(this.handleError);
