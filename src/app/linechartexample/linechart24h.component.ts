@@ -27,8 +27,8 @@ export class LineChart24hComponent extends LineChartDemoComponent implements OnI
       this.hours.push(hour);
     }
 
-    console.log("init");
-    this.service.getAllMeetwaarden().subscribe(result => {
+    console.log("init last 24 hours");
+    this.service.getLast24Hours().subscribe(result => {
       this.meetwaarden = result;
       this.lineChartData = [{data: this.meetwaarden, label: 'Series A'}];
       this.lineChartData.slice();

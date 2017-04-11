@@ -8,12 +8,17 @@ import {Http, Response} from "@angular/http";
 @Injectable()
 export class MeetwaardenService {
 
-  constructor(private http:Http){}
+  constructor(private http: Http){}
 
-  private groupsUrl = 'http://52.28.226.118:3030/api';
+  private groupsUrl = 'http://52.28.226.118:3030/last24hour';
+  private monthUrl = 'http://52.28.226.118:3030/lastmonth';
 
-  public getAllMeetwaarden():Observable<any>{
+  public getLast24Hours(): Observable<any>{
     return this.http.get(this.groupsUrl).map(res => res.json()).catch(this.handleError);
+  }
+
+  public getLastMonth(): Observable<any>{
+    return this.http.get(this.monthUrl).map(res => res.json()).catch(this.handleError);
   }
 
   private handleError (error: Response | any) {

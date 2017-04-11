@@ -1,17 +1,21 @@
 import {LineChartDemoComponent} from "./linechartexample.component";
 import {Component, OnInit} from "@angular/core";
+import {MeetwaardenService} from "../services/MeetwaardenService";
 /**
  * Created by gjoosen on 11/04/2017.
  */
 @Component({
   selector: 'line-chart-1-mnt',
-  templateUrl: '../linechartexample/linechartexample.component.html'
+  templateUrl: '../linechartexample/linechartexample.component.html',
+  providers: [MeetwaardenService]
 })
 
 export class LineChart1mntComponent extends LineChartDemoComponent implements OnInit{
 
   date = new Date();
   days = new Array<Number>();
+
+  meetwaarden = [];
 
   public lineChartData: Array<any> = [
     {data: [50, 100, 100, 100, 100, 50], label: 'Energy in kWh'}];
@@ -25,7 +29,18 @@ export class LineChart1mntComponent extends LineChartDemoComponent implements On
       }
       this.days.push(day);
     }
+
+    console.log('init last month');
+    this.service.getLastMonth().subscribe(result => {
+      this.meetwaarden = result;
+      this.lineChartData = [{data: this.meetwaarden, label: 'Series A'}];
+      this.lineChartData.slice();
+    });
   }
   public lineChartLabels: Array<any> = this.days;
+
+  constructor(private service: MeetwaardenService){
+    super();
+  }
 
 }

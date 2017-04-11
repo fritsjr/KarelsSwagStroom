@@ -5,7 +5,6 @@ import { HttpModule } from '@angular/http';
 
 import { AppComponent } from './app.component';
 import {MaterialModule} from "@angular/material";
-import {DogCard} from "./cardtest/dogcard.component";
 import {InfoPage} from "./Info/info.component";
 import {DashboardPage} from "./Dashboard/dashboard.component"
 import { ChartsModule } from 'ng2-charts/ng2-charts';
@@ -16,19 +15,20 @@ import {LineChart24hComponent} from "./linechartexample/linechart24h.component";
 import {LineChart1mntComponent} from "./linechartexample/linechart1mnt.component";
 import {LineChart1wkComponent} from "./linechartexample/linechart1wk.component";
 import {LineChartcostComponent} from "./linechartexample/linechartcost.component";
+import {CostsPage} from "./costs/costs.component";
 
 
 @NgModule({
   declarations: [
     AppComponent,
-    DogCard,
     InfoPage,
     DashboardPage,
     LineChartDemoComponent,
     LineChart24hComponent,
     LineChart1mntComponent,
     LineChart1wkComponent,
-    LineChartcostComponent
+    LineChartcostComponent,
+    CostsPage
   ],
   imports: [
     BrowserModule,

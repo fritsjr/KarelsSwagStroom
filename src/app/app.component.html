@@ -1,6 +1,6 @@
 <div id="topbar">
   <button md-button id="topbarbutton" (click)="showComponent(1)">Dashboard</button>
-  <button md-button id="topbarbutton" (click)="showComponent(2)">Options</button>
+  <button md-button id="topbarbutton" (click)="showComponent(2)">Costs</button>
   <button md-button id="topbarbutton" (click)="showComponent(3)">Info</button>
 
 </div>
@@ -10,7 +10,7 @@
   <md-grid-tile [rowspan]="9" [colspan]="5">
   <div [ngSwitch]="contentSwitch">
     <dashboard-page *ngSwitchCase="1">...</dashboard-page>
-    <dog-card *ngSwitchCase="2"></dog-card>
+    <costs-page *ngSwitchCase="2"></costs-page>
     <info-page *ngSwitchCase="3"></info-page>
   </div>
   </md-grid-tile>
