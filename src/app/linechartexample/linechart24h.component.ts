@@ -1,5 +1,5 @@
 import {LineChartDemoComponent} from "./linechartexample.component";
-import {Component} from "@angular/core";
+import {Component, OnInit} from "@angular/core";
 /**
  * Created by gjoosen on 11/04/2017.
  */
@@ -8,12 +8,39 @@ import {Component} from "@angular/core";
   templateUrl: '../linechartexample/linechartexample.component.html'
 })
 
-export class LineChart24hComponent extends LineChartDemoComponent{
+export class LineChart24hComponent extends LineChartDemoComponent implements OnInit{
+
+
+  date = new Date();
+  date2 = new Date();
+  hours = new Array<Number>();
+
+
+
+  ngOnInit() {
+    for (let i = 24; i > 0; i--) {
+      let hour = this.date.getHours() - i;
+      if(hour <= 0){
+        hour = hour + 24;
+      }
+      this.hours.push(hour);
+    }
+
+
+    this.setDate();
+  }
 
   public lineChartData:Array<any> = [
-    {data: [20000, 59, 80, 81, 56, 55, 40], label: 'Series A'},
-    // {data: [28, 48, 40, 19, 86, 27, 90], label: 'Series B'},
-    // {data: [18, 48, 77, 9, 100, 27, 40], label: 'Series C'}
-  ];
+    {data: [60, 59, 80, 81, 56, 55, 40], label: 'Energy in kWh'}];
+
+
+
+  public lineChartLabels:Array<any> = this.hours;
+
+  public setDate() {
+    this.date2.setHours(this.date.getHours() - 17);
+  }
+
 
 }
+
