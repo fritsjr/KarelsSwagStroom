@@ -13,6 +13,9 @@ import {LineChartDemoComponent} from "./linechartexample/linechartexample.compon
 
 import 'hammerjs';
 import {LineChart24hComponent} from "./linechartexample/linechart24h.component";
+import {LineChart1mntComponent} from "./linechartexample/linechart1mnt.component";
+import {LineChart1wkComponent} from "./linechartexample/linechart1wk.component";
+import {LineChartcostComponent} from "./linechartexample/linechartcost.component";
 
 
 @NgModule({
@@ -22,7 +25,10 @@ import {LineChart24hComponent} from "./linechartexample/linechart24h.component";
     InfoPage,
     DashboardPage,
     LineChartDemoComponent,
-    LineChart24hComponent
+    LineChart24hComponent,
+    LineChart1mntComponent,
+    LineChart1wkComponent,
+    LineChartcostComponent
   ],
   imports: [
     BrowserModule,
