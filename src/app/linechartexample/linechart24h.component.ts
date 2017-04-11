@@ -16,7 +16,6 @@ export class LineChart24hComponent extends LineChartDemoComponent implements OnI
   meetwaarden = [];
 
   date = new Date();
-  date2 = new Date();
   hours = new Array<Number>();
 
 
@@ -24,12 +23,11 @@ export class LineChart24hComponent extends LineChartDemoComponent implements OnI
   ngOnInit() {
     for (let i = 24; i > 0; i--) {
       let hour = this.date.getHours() - i;
-      if(hour <= 0){
+      if(hour < 0){
         hour = hour + 24;
       }
       this.hours.push(hour);
     }
-    this.setDate();
 
     console.log("init");
     this.service.getAllMeetwaarden().subscribe(result => {
@@ -49,8 +47,6 @@ export class LineChart24hComponent extends LineChartDemoComponent implements OnI
 
   public lineChartLabels: Array<any> = this.hours;
 
-  public setDate() {
-    this.date2.setHours(this.date.getHours() - 17);
-  }
+
 }
 
