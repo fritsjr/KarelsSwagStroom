@@ -16,6 +16,7 @@ import {LineChart1mntComponent} from "./linechartexample/linechart1mnt.component
 import {LineChart1wkComponent} from "./linechartexample/linechart1wk.component";
 import {LineChartcostComponent} from "./linechartexample/linechartcost.component";
 import {CostsPage} from "./costs/costs.component";
+import {BarChartComponent} from "./barchartexample/barchart.component";
 
 
 @NgModule({
@@ -28,7 +29,8 @@ import {CostsPage} from "./costs/costs.component";
     LineChart1mntComponent,
     LineChart1wkComponent,
     LineChartcostComponent,
-    CostsPage
+    CostsPage,
+    BarChartComponent
   ],
   imports: [
     BrowserModule,

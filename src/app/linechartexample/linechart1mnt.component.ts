@@ -18,11 +18,12 @@ export class LineChart1mntComponent extends LineChartDemoComponent implements On
   meetwaarden = [];
 
   public lineChartData: Array<any> = [
-    {data: [50, 100, 100, 100, 100, 50], label: 'Energy in kWh'}];
+    {data: [50, 100, 100, 100, 100, 50], label: 'Energy in kWh'}
+    ];
   // public lineChartLabels:Array<any> = ['5', '10', '15', '20', '25', '30'];
 
   ngOnInit() {
-    for (let i = 31; i > 0; i--){
+    for (let i = 31; i > 0; i--) {
       let day = this.date.getDate() - i;
       if (day <= 0) {
         day = day + 31;
@@ -33,7 +34,7 @@ export class LineChart1mntComponent extends LineChartDemoComponent implements On
     console.log('init last month');
     this.service.getLastMonth().subscribe(result => {
       this.meetwaarden = result;
-      this.lineChartData = [{data: this.meetwaarden, label: 'Series A'}];
+      this.lineChartData = [{data: this.meetwaarden, label: 'Energy usage in kWh'}];
       this.lineChartData.slice();
     });
   }

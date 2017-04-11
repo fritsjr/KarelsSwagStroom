@@ -12,6 +12,7 @@ export class MeetwaardenService {
 
   private groupsUrl = 'http://52.28.226.118:3030/last24hour';
   private monthUrl = 'http://52.28.226.118:3030/lastmonth';
+  private weekUrl = 'http://52.28.226.118:3030/lastweek';
 
   public getLast24Hours(): Observable<any>{
     return this.http.get(this.groupsUrl).map(res => res.json()).catch(this.handleError);
@@ -19,6 +20,10 @@ export class MeetwaardenService {
 
   public getLastMonth(): Observable<any>{
     return this.http.get(this.monthUrl).map(res => res.json()).catch(this.handleError);
+  }
+
+  public getLastWeek(): Observable<any>{
+    return this.http.get(this.weekUrl).map(res => res.json()).catch(this.handleError);
   }
 
   private handleError (error: Response | any) {

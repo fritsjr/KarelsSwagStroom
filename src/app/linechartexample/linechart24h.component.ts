@@ -30,7 +30,7 @@ export class LineChart24hComponent extends LineChartDemoComponent implements OnI
     console.log("init last 24 hours");
     this.service.getLast24Hours().subscribe(result => {
       this.meetwaarden = result;
-      this.lineChartData = [{data: this.meetwaarden, label: 'Series A'}];
+      this.lineChartData = [{data: this.meetwaarden, label: 'Energy usage in kWh  '}];
       this.lineChartData.slice();
     });
 
