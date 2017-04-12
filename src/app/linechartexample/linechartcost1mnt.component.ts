@@ -5,12 +5,12 @@ import {MeetwaardenService} from "../services/MeetwaardenService";
  * Created by gjoosen on 11/04/2017.
  */
 @Component({
-  selector: 'line-chart-1-mnt',
+  selector: 'line-chart-cost-1-mnt',
   templateUrl: '../linechartexample/linechartexample.component.html',
   providers: [MeetwaardenService]
 })
 
-export class LineChart1mntComponent extends LineChartDemoComponent implements OnInit{
+export class LineChartCost1mntComponent extends LineChartDemoComponent implements OnInit{
 
   date = new Date();
   days = new Array<Number>();
@@ -18,8 +18,8 @@ export class LineChart1mntComponent extends LineChartDemoComponent implements On
   meetwaarden = [];
 
   public lineChartData: Array<any> = [
-    {data: [50, 100, 100, 100, 100, 50], label: 'Energy in kWh'}
-    ];
+    {data: [50, 100, 100, 100, 100, 50], label: 'Cost in euro\'s'}
+  ];
   // public lineChartLabels:Array<any> = ['5', '10', '15', '20', '25', '30'];
 
   ngOnInit() {
@@ -31,12 +31,12 @@ export class LineChart1mntComponent extends LineChartDemoComponent implements On
       this.days.push(day);
     }
 
-    console.log('init last month');
+    console.log('init last month month');
     this.service.getLastMonth().subscribe(result => {
       for(let x = 0; x < result.length; ++x){
-        this.meetwaarden.push((result[x] / 1000));
+        this.meetwaarden.push((result[x] / 1000) * 0.18);
       }
-      this.lineChartData = [{data: this.meetwaarden, label: 'Energy usage in kWh'}];
+      this.lineChartData = [{data: this.meetwaarden, label: 'Cost in euro\'s'}];
       this.lineChartData.slice();
     });
   }

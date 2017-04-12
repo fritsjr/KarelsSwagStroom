@@ -17,6 +17,9 @@ import {LineChart1wkComponent} from "./linechartexample/linechart1wk.component";
 import {LineChartcostComponent} from "./linechartexample/linechartcost.component";
 import {CostsPage} from "./costs/costs.component";
 import {BarChartComponent} from "./barchartexample/barchart.component";
+import {LineChartCost24hComponent} from "./linechartexample/linechartcost24h.component";
+import {LineChartCost1mntComponent} from "./linechartexample/linechartcost1mnt.component";
+import {BarChartCostComponent} from "./barchartexample/barchartcost.component";
 
 
 @NgModule({
@@ -30,7 +33,10 @@ import {BarChartComponent} from "./barchartexample/barchart.component";
     LineChart1wkComponent,
     LineChartcostComponent,
     CostsPage,
-    BarChartComponent
+    BarChartComponent,
+    LineChartCost24hComponent,
+    LineChartCost1mntComponent,
+    BarChartCostComponent
   ],
   imports: [
     BrowserModule,

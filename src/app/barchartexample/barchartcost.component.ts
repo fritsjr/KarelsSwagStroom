@@ -6,13 +6,13 @@ import {MeetwaardenService} from '../services/MeetwaardenService';
  */
 
 @Component({
-  selector: 'barchart',
+  selector: 'barchart-cost',
   templateUrl: './barchart.component.html',
   styleUrls: ['./barchart.component.css'],
   providers: [MeetwaardenService]
 })
 
-export class BarChartComponent implements OnInit{
+export class BarChartCostComponent implements OnInit{
   public barChartOptions:any = {
     scaleShowVerticalLines: false,
     responsive: true
@@ -27,7 +27,7 @@ export class BarChartComponent implements OnInit{
   days = new Array<string>();
 
   public barChartData:any[] = [
-    {data: [65, 59, 80, 81, 56, 55, 45], label: 'Energy usage in kWh'}
+    {data: [65, 59, 80, 81, 56, 55, 45], label: 'Cost in euro\'s'}
   ];
 
   public barChartColors: Array<any> = [
@@ -43,11 +43,11 @@ export class BarChartComponent implements OnInit{
 
   // events
   public chartClicked(e: any): void {
-    console.log(e);
+    // console.log(e);
   }
 
   public chartHovered(e: any): void {
-    console.log(e);
+    // console.log(e);
   }
 
   constructor(private service: MeetwaardenService){  }
@@ -66,9 +66,9 @@ export class BarChartComponent implements OnInit{
     console.log('init last week');
     this.service.getLastWeek().subscribe(result => {
       for(let x = 0; x < result.length; ++x){
-        this.meetwaarden.push((result[x] / 1000));
+        this.meetwaarden.push((result[x] / 1000) * 0.18);
       }
-      this.barChartData = [{data: this.meetwaarden, label: 'Energy usage in kWh'}];
+      this.barChartData = [{data: this.meetwaarden, label: 'Cost in euro\'s'}];
       this.barChartData.slice();
     });
   }

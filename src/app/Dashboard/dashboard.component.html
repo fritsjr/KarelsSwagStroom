@@ -4,7 +4,7 @@
   <md-grid-tile [colspan]="3" [rowspan]="1">
     <md-card id="datablock" style="height: 85%; width: 600px;">
       <md-card-title>Current usage in Watts</md-card-title>
-      <md-card-content style="font-size: 150px; text-align: center">100W</md-card-content>
+      <md-card-content style="font-size: 100px; text-align: center; padding-top: 60px;">{{ liveWatts }}W/Min</md-card-content>
     </md-card>
   </md-grid-tile>
   <md-grid-tile [colspan]="3" [rowspan]="1">
@@ -25,7 +25,37 @@
       <md-card-content><line-chart-1-mnt></line-chart-1-mnt></md-card-content>
     </md-card>
   </md-grid-tile>
-
-
-
 </md-grid-list>
+
+
+
+<!--<div class="container" style="width: 1400px">-->
+<!--<div class="row" style="width: 1400px;">-->
+  <!--<div class="col-lg-6">-->
+    <!--<md-card id="datablock" style="height: 85%; width: 600px;">-->
+      <!--<md-card-title>Current usage in Watts</md-card-title>-->
+      <!--<md-card-content style="font-size: 100px; text-align: center; padding-top: 60px;">100W</md-card-content>-->
+    <!--</md-card>-->
+  <!--</div>-->
+  <!--<div class="col-lg-6">-->
+    <!--<md-card id="datablock" style="height: 85%">-->
+      <!--<md-card-title>Energy usage last 24 hours</md-card-title>-->
+      <!--<md-card-content><line-chart-24h></line-chart-24h></md-card-content>-->
+    <!--</md-card>-->
+  <!--</div>-->
+<!--</div>-->
+<!--<div class="row">-->
+  <!--<div class="col-lg-6">-->
+    <!--<md-card id="datablock" style="height: 85%">-->
+      <!--<md-card-title>Energy usage last week</md-card-title>-->
+      <!--<md-card-content><barchart></barchart></md-card-content>-->
+    <!--</md-card>-->
+  <!--</div>-->
+  <!--<div class="col-lg-6">-->
+    <!--<md-card id="datablock" style="height: 85%">-->
+      <!--<md-card-title>Energy usage last month</md-card-title>-->
+      <!--<md-card-content><line-chart-1-mnt></line-chart-1-mnt></md-card-content>-->
+    <!--</md-card>-->
+  <!--</div>-->
+<!--</div>-->
+<!--</div>-->

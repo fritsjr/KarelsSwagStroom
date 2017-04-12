@@ -6,12 +6,12 @@ import {MeetwaardenService} from "../services/MeetwaardenService";
  * Created by gjoosen on 11/04/2017.
  */
 @Component({
-  selector: 'line-chart-24h',
+  selector: 'line-chart-cost-24h',
   templateUrl: '../linechartexample/linechartexample.component.html',
   providers: [MeetwaardenService]
 })
 
-export class LineChart24hComponent extends LineChartDemoComponent implements OnInit{
+export class LineChartCost24hComponent extends LineChartDemoComponent implements OnInit{
 
   meetwaarden = [];
 
@@ -27,12 +27,12 @@ export class LineChart24hComponent extends LineChartDemoComponent implements OnI
       this.hours.push(hour + ':00');
     }
 
-    console.log("init last 24 hours");
+    console.log("init last 24 hours cost");
     this.service.getLast24Hours().subscribe(result => {
       for(let x = 0; x < result.length; ++x){
-        this.meetwaarden.push((result[x] / 1000));
+        this.meetwaarden.push((result[x] / 1000) * 0.18);
       }
-      this.lineChartData = [{data: this.meetwaarden, label: 'Energy usage in kWh  '}];
+      this.lineChartData = [{data: this.meetwaarden, label: 'Cost in euro\'s  '}];
       this.lineChartData.slice();
     });
 
@@ -43,7 +43,7 @@ export class LineChart24hComponent extends LineChartDemoComponent implements OnI
   }
 
   public lineChartData: Array<any> = [
-    {data: [60, 59, 80, 81, 56, 55, 40], label: 'Energy in kWh'}];
+    {data: [24, 24, 50, 60, 45, 40], label: 'Cost in euro\'s'}];
 
   public lineChartLabels: Array<any> = this.hours;
 

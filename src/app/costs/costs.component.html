@@ -1,0 +1,31 @@
+<md-grid-list cols="6" rowHeight="400px" gutterSize="0px" style="width: 1400px">
+
+
+  <md-grid-tile [colspan]="3" [rowspan]="1">
+    <md-card id="datablock" style="height: 85%; width: 600px;">
+      <md-card-title>Current cost in euro's</md-card-title>
+      <md-card-content style="font-size: 100px; text-align: center; padding-top: 60px;">€{{liveEuros}}/Min</md-card-content>
+    </md-card>
+  </md-grid-tile>
+  <md-grid-tile [colspan]="3" [rowspan]="1">
+    <md-card id="datablock" style="height: 85%">
+      <md-card-title>Costs of the last 24 hours</md-card-title>
+      <md-card-content><line-chart-cost-24h></line-chart-cost-24h></md-card-content>
+    </md-card>
+  </md-grid-tile>
+  <md-grid-tile [colspan]="3" [rowspan]="1">
+    <md-card id="datablock" style="height: 85%">
+      <md-card-title>Energy usage last week</md-card-title>
+      <md-card-content><barchart-cost></barchart-cost></md-card-content>
+    </md-card>
+  </md-grid-tile>
+  <md-grid-tile [colspan]="3" [rowspan]="1">
+    <md-card id="datablock" style="height: 85%">
+      <md-card-title>Cost of the last month</md-card-title>
+      <md-card-content><line-chart-cost-1-mnt></line-chart-cost-1-mnt></md-card-content>
+    </md-card>
+  </md-grid-tile>
+
+
+
+</md-grid-list>
